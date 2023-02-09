@@ -27,7 +27,7 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        $item = new İtem();
+        $item = new Item();
         $item->name = $request->name;
         $item->description = $request->description;
         $item->time = $request->time;
@@ -43,7 +43,7 @@ class ItemController extends Controller
      */
     public function show($id)
     {
-        $item = Item::($id);
+        $item = Item::find($id);
         return $item;
 
     }
@@ -63,7 +63,7 @@ class ItemController extends Controller
         $item->time = $request->time;
         $item->save();
         return $item;
-
+    }
     /**
      * Remove the specified resource from storage.
      *
